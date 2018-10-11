@@ -30,3 +30,21 @@
     transform: rotate(360deg);
   }
 }
+
+.blockType {
+  background-color: whitesmoke;
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 10px;
+  display: inline-block;
+  height:30px;
+  width: 30px;
+}
+.block-container {
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  height: 100vh;
+  padding-top: 80px;
+}
