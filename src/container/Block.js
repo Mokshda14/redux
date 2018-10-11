@@ -19,7 +19,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return(
-        {clicked: (index, playerId) => dispatch(setBlockValue(index, playerId))}
+        {clicked: (index, playerId, size) => dispatch(setBlockValue(index, playerId, size))}
     )
 }
 

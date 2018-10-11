@@ -8,11 +8,7 @@ export const block = (state = iBlocks, action) => {
         //     icon: action.icon,
         //     text: action.text
         //     }let arr = {
-        let arr = state;
-          arr = [arr.listOfBlocks, {index: action.index,
-          icon: action.icon,
-          text: action.text
-          }]
+        let arr = {state, listOfBlocks: state.listOfBlocks = [...state.listOfBlocks, action.block]}
 
         return arr;
       case 'SET_BLOCK_VAL':
@@ -22,7 +18,7 @@ export const block = (state = iBlocks, action) => {
          
         }
       })
-      return state;
+      return {state, listOfBlocks: state.listOfBlocks = [...state.listOfBlocks]};
       case 'RESET_BLOCKS':
         state.listOfBlocks.length = 0;
         return state;

@@ -33,22 +33,27 @@ export const setPlayer = (id, icon=iconType.TAC, isActive=false) => {
     
  }
 }
-export const setBlockValue = (index, text) => {
-  return(
-  {
+export const setBlockValue = (index, text, size) => {
+  let player;
+  return dispatch => (
+  player = (text+1)> size ? 1 : (text+1),
+
+  dispatch(togglePlayer(player)),
+  dispatch({
     type: 'SET_BLOCK_VAL',
     text,
     index
   })
+  )
 }
 export const resetBlocks = () => ({
   type : 'RESET_BLOCKS',
 })
 export const setBlock = (index, icon=iconType.TAC, text='') => ({
   type : 'SET_BLOCK',
-  index,
+  block : {index,
   icon,
-  text
+  text}
 })
 export const iconType = {
   TIC: "tic",

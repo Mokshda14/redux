@@ -2,9 +2,7 @@ import { iPlayers } from '../store/initiatState'
 export const players = (state = iPlayers, action) => {
   switch (action.type) {
     case 'PLAYER_LIST':
-      state.length = 0;
-      let abc = [ ...state.listOfPlayers, ...action.list]
-      return abc;
+      return {state, listOfPlayers: state.listOfPlayers = [...action.list]}
     case 'PLAYER_ACTIVE':
       state.listOfPlayers.map(player => {
         player.isActive = false;
@@ -12,7 +10,7 @@ export const players = (state = iPlayers, action) => {
           player.isActive = true;
         }
       })
-      return state;
+      return {state, listOfPlayers: state.listOfPlayers = [...state.listOfPlayers]};
     default:
       return state
   }
