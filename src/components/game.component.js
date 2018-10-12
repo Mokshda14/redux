@@ -8,7 +8,7 @@ const GameCpt = ({addPlayers}) => {
     <div className="main-container">
         <div className="player-container">
         <form>
-                <input ref={node => input = node} />
+                <input ref={sample => input = sample} />
                 <button type="submit" onClick={(e) => {
                     e.preventDefault();
                     addPlayers(input.value)
@@ -22,6 +22,7 @@ const GameCpt = ({addPlayers}) => {
         </div>
     </div>
     )
+
 
 }
 
